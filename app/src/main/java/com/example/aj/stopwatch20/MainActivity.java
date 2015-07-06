@@ -1,9 +1,11 @@
 package com.example.aj.stopwatch20;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -28,11 +30,35 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+
+        // Used for toasts
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // Open settings activity
+                return true;
+            case R.id.action_search:
+                // Open search
+                // Toast user for testing
+                CharSequence text1 = "Search!";
+
+                Toast toast1 = Toast.makeText(context, text1, duration);
+                toast1.show();
+                return true;
+            case R.id.action_newproj:
+                // Open new project dialog
+                // Toast user for testing
+                CharSequence text2 = "New project!";
+
+                Toast toast2 = Toast.makeText(context, text2, duration);
+                toast2.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
-        return super.onOptionsItemSelected(item);
     }
 }
