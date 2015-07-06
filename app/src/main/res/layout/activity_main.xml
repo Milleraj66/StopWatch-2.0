@@ -7,8 +7,8 @@
     android:orientation="vertical">
 
     <ExpandableListView
+        android:id="@+id/projExpandableListView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/expandableListView" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
